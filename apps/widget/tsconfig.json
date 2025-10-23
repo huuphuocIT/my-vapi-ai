@@ -4,13 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@workspace/ui/*": ["../../packages/ui/src/*"],
-      "@workspace/backend/*": ["../../packages/backend/convex/*"]
+      "@workspace/ui/*": ["../../packages/ui/src/*"]
     },
-    "skipLibCheck": true,
-    "declaration": false,
-    "declarationMap": false,
-    "composite": false,
     "plugins": [
       {
         "name": "next"

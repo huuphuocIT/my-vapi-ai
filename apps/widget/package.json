@@ -1,10 +1,10 @@
 {
-  "name": "web",
+  "name": "widget",
   "version": "0.0.1",
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3000",
+    "dev": "next dev  --port 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -12,8 +12,6 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.33.6",
-    "@sentry/nextjs": "^10.21.0",
     "@workspace/backend": "workspace:*",
     "@workspace/ui": "workspace:*",
     "convex": "^1.28.0",
