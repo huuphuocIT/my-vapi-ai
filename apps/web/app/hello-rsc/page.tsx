@@ -18,7 +18,9 @@ export default async function Page() {
     <div>
       <ServerComponent />
 
-      <h1>Hello, RSC {data.map((item) => item.name)}</h1>
+      <h1 className="flex-center">
+        Hello, RSC {data.map((item) => item.name)}
+      </h1>
     </div>
   );
 }

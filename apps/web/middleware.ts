@@ -1,4 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
 const isPublicPage = createRouteMatcher([
   "/sign-in(.*)",
@@ -9,6 +10,10 @@ const isPublicPage = createRouteMatcher([
 export default clerkMiddleware(async (auth, request) => {
   if (!isPublicPage(request)) {
     await auth.protect();
+  }
+
+  if (request.nextUrl.pathname === "/config") {
+    return NextResponse.redirect(new URL("/config/widget", request.url), 308);
   }
 });
 

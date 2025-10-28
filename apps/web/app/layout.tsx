@@ -18,7 +18,7 @@ const fontMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Vapi AI app",
+  title: "My Nami AI app",
   description: "Learning Next.js and Convex",
 };
 
@@ -32,7 +32,11 @@ export default function RootLayout({
       <body
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
-        <ClerkProvider>
+        <ClerkProvider
+          appearance={{
+            cssLayerName: "clerk",
+          }}
+        >
           <Providers>{children}</Providers>
         </ClerkProvider>
       </body>

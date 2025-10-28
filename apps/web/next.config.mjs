@@ -1,8 +1,17 @@
-import {withSentryConfig} from "@sentry/nextjs";
+import { withSentryConfig } from "@sentry/nextjs";
+
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   transpilePackages: ["@workspace/ui"],
-}
+  redirects: async () => [
+    {
+      source: "/config",
+      destination: "/config/widget",
+      permanent: true,
+    },
+  ],
+};
 
 export default withSentryConfig(nextConfig, {
   // For all available options, see:
@@ -10,7 +19,7 @@ export default withSentryConfig(nextConfig, {
 
   org: "phuoc-th",
 
-  project: "my-vapi-ai",
+  project: "my-nami-ai",
 
   // Only print logs for uploading source maps in CI
   silent: !process.env.CI,

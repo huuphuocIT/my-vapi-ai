@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 
-import { AuthGuard } from "@/modules/auth/components";
+import { DefaultLayout } from "@/modules/dashboard/layouts";
 
 export default function Layout({ children }: Readonly<PropsWithChildren>) {
-  return <AuthGuard>{children}</AuthGuard>;
+  return <DefaultLayout>{children}</DefaultLayout>;
 }

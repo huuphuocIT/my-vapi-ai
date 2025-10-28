@@ -15,12 +15,17 @@ export default function Page() {
   }, [addUser]);
 
   return (
-    <main className="flex flex-col items-center gap-2 mt-5">
-      <UserButton showName />
-      <p className="mx-auto text-center">{JSON.stringify(users)}</p>
+    <div className="px-5 space-y-2">
+      <div className="space-x-2">
+        {users?.map((user) => (
+          <span key={user._id} className="whitespace-nowrap">
+            ({user.name} / {user.email})
+          </span>
+        ))}
+      </div>
       <Button size="sm" onClick={handleAddUser}>
         Button
       </Button>
-    </main>
+    </div>
   );
 }

@@ -12,6 +12,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.33.6",
+    "@vapi-ai/web": "^2.5.0",
     "@workspace/backend": "workspace:*",
     "@workspace/ui": "workspace:*",
     "convex": "^1.28.0",
