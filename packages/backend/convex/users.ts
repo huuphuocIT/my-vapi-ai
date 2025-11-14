@@ -20,8 +20,8 @@ export const add = mutation({
       throw new Error("Not authenticated");
     }
 
-    return await ctx.db
-      .insert("users", { name, email })
-      .then((id) => ctx.db.get(id));
+    const userId = await ctx.db.insert("users", { name, email });
+
+    return await ctx.db.get(userId);
   },
 });

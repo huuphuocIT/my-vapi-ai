@@ -4,15 +4,15 @@ import { PropsWithChildren } from "react";
 import {
   SidebarProvider,
   SidebarTrigger,
+  SIDEBAR_COOKIE_NAME,
 } from "@workspace/ui/components/sidebar";
 import { AuthGuard } from "@/modules/auth/components";
-
-import DashboardSidebar from "../../components/sidebar";
+import DashboardSidebar from "@/modules/dashboard/components/sidebar";
 
 export const DefaultLayout = async (props: PropsWithChildren) => {
   const { children } = props;
   const cookieStore = await cookies();
-  const defaultOpen = cookieStore.get("sidebar_state")?.value === "true";
+  const defaultOpen = cookieStore.get(SIDEBAR_COOKIE_NAME)?.value === "true";
 
   return (
     <AuthGuard>
